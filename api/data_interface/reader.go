@@ -1,14 +1,12 @@
-package main
+package data_interface
 
 import (
 	"encoding/csv"
 	"fmt"
 	"os"
-	"github.com/razzlestorm/babys-first-meal-planner/api/data_interface/interface"
-	"github.com/razzlestorm/babys-first-meal-planner/data"
 )
 
-func main() {
+func Print_csv() {
 	file, err := os.Open("data/food_db.csv")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
