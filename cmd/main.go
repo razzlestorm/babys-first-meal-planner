@@ -16,6 +16,13 @@ type FoodData struct {
 	Likes		bool
 }
 
+func FirstOrNil[T any](slice []T) *T {
+	if len(slice) == 0 {
+		return nil
+	}
+	return &slice[0]
+}
+
 func main() {
 	
 		// Connect to SurrealDB
@@ -54,26 +61,35 @@ func main() {
 	// data_interface.Print_csv()
 	// test := data_interface.Write_row("Egg", true, time.Now(), true)
 	// println(test)// Or use structs
-	food1, err := surrealdb.Create[FoodData](db, models.Table("food_data"), FoodData{
-		Name:     "Egg",
+	createdFoods, err := surrealdb.Create[[]FoodData](db, models.Table("food_data"), FoodData{
+		Name:     "Cheese",
 		Enabled:  true,
 	})
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Created food data with a struct: %+v\n", food1)
+
+	food1 := FirstOrNil[FoodData](*createdFoods)
+	if food1 == nil {
+		panic("No food data returned")
+	}
+	fmt.Printf("Created food data with a struct: %+v\n", *food1)
 
 	// Get entry by Record ID
-	food, err := surrealdb.Select[FoodData, models.RecordID](db, *food1.ID)
+	selectedFood, err := surrealdb.Select[FoodData, models.RecordID](db, *food1.ID)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Selected a food by record id: %+v\n", food)
 
-	// Or retrieve the entire table
-	foods, err := surrealdb.Select[[]FoodData, models.Table](db, models.Table("food_data"))
-	if err != nil {
-		panic(err)
+	if selectedFood == nil {
+		panic("No food found with that ID")
 	}
-	fmt.Printf("Selected all in food_data table: %+v\n", foods)
+
+	fmt.Printf("Selected a food by record id: %+v\n", selectedFood)
+	// Or retrieve the entire table
+	//foods, err := surrealdb.Select[[]FoodData, models.Table](db, models.Table("food_data"))
+	//if err != nil {
+	//	panic(err)
+	//}
+	//fmt.Printf("Selected all in food_data table: %+v\n", foods)
 }
