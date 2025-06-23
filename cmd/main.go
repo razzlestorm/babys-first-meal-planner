@@ -9,11 +9,11 @@ import (
 )
 
 type FoodData struct {
-	ID      	*models.RecordID `json:"id,omitempty"`
-	Name    	string `json:"name"`
-	Enabled 	bool
-	LastDateTried 	time.Time
-	Likes		bool
+	ID            *models.RecordID `json:"id,omitempty"`
+	Name          string           `json:"name"`
+	Enabled       bool             `json:"enabled"`
+	LastDateTried time.Time        `json:"date_tried"`
+	Likes         bool             `json:"likes"`
 }
 
 func FirstOrNil[T any](slice []T) *T {
@@ -24,8 +24,8 @@ func FirstOrNil[T any](slice []T) *T {
 }
 
 func main() {
-	
-		// Connect to SurrealDB
+
+	// Connect to SurrealDB
 	db, err := surrealdb.New("ws://localhost:8000")
 	if err != nil {
 		panic(err)
@@ -62,8 +62,8 @@ func main() {
 	// test := data_interface.Write_row("Egg", true, time.Now(), true)
 	// println(test)// Or use structs
 	createdFoods, err := surrealdb.Create[[]FoodData](db, models.Table("food_data"), FoodData{
-		Name:     "Cheese",
-		Enabled:  true,
+		Name:    "Cheese",
+		Enabled: true,
 	})
 	if err != nil {
 		panic(err)

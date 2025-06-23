@@ -8,29 +8,29 @@ import (
 	"time"
 )
 
-var file_name = "data/food_db.csv";
+var file_name = "data/food_db.csv"
 
 type FoodData struct {
-	name string
-	enabled bool
+	name            string
+	enabled         bool
 	last_date_tried time.Time
-	likes bool
+	likes           bool
 }
 
 func newFoodData(name string, enabled bool, last_date_tried time.Time, likes bool) *FoodData {
 
-	fd := FoodData{name, enabled, last_date_tried, likes}	
+	fd := FoodData{name, enabled, last_date_tried, likes}
 	return &fd
 }
 
 func (fd *FoodData) ToStringSlice() []string {
 	return []string{fd.name, strconv.FormatBool(fd.enabled), fd.last_date_tried.String(), strconv.FormatBool(fd.likes)}
 
-} 
+}
 
 func Print_csv() {
 	_, serr := os.Stat(file_name)
-	
+
 	if serr != nil {
 		fmt.Printf("Error stat finding file: %v", serr)
 		return
