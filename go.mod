@@ -2,7 +2,10 @@ module github.com/razzlestorm/babys-first-meal-planner
 
 go 1.22.2
 
-require github.com/surrealdb/surrealdb.go v0.3.2
+require (
+	github.com/joho/godotenv v1.5.1
+	github.com/surrealdb/surrealdb.go v0.3.2
+)
 
 require (
 	github.com/fxamacker/cbor/v2 v2.7.0 // indirect
