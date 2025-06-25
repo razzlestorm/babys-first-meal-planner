@@ -3,7 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"log"
+	"log/slog"
 	"os"
 	"time"
 
@@ -31,9 +31,10 @@ func openDB(user, pass, dbName string) (*sql.DB, error) {
 
 
 func main() {
+	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		logger.Error("Error loading .env file")
 	}
 
 	user := os.Getenv("DB_USER")
@@ -42,7 +43,7 @@ func main() {
 
 	db, err := openDB(user, pass, dbName)
 	if err != nil {
-		fmt.Print("ERROR WITH DB YO")
+		logger.Error(err.Error())
 		os.Exit(1)
 	}
 
