@@ -1,14 +1,13 @@
 package models
 
 import (
-	surrealdb "github.com/surrealdb/surrealdb.go"
-	"fmt"
-	"github.com/surrealdb/surrealdb.go/pkg/models"
 	"time"
+	"database/sql"
+	"errors"
 )
 
 type FoodData struct {
-	ID            *models.RecordID `json:"id,omitempty"`
+	ID            int `json:"id,omitempty"`
 	Name          string           `json:"name"`
 	Enabled       bool             `json:"enabled"`
 	Likes         bool             `json:"likes"`
@@ -16,48 +15,43 @@ type FoodData struct {
 }
 
 type FoodDataModel struct {
-	DB *surrealdb.DB
+	DB *sql.DB
 }
 
-func FirstOrNil[T any](slice []T) *T {
-	if len(slice) == 0 {
-		return nil
+
+func (m *FoodDataModel) Insert(name string, enabled, likes bool, lastDateTried time.Time) (int, error) {
+	stmt := `INSERT INTO foods (name, enabled, likes, last_date_tried) VALUES(?, ?, ?, ?)`
+	result, err := m.DB.Exec(stmt, name, enabled, likes, lastDateTried)
+	if err != nil {
+		return 0, err
 	}
-	return &slice[0]
+
+	id, err := result.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
+
+	return int(id), nil
 }
 
-func (m *FoodDataModel) Insert(name string, enabled, likes bool, lastDateTried time.Time) (*FoodData, error) {
-	fmt.Printf("%+v\n", FoodData{
-		Name:          name,
-		Enabled:       enabled,
-		Likes:         likes,
-		LastDateTried: lastDateTried,
-	})
-	createdFoods, err := surrealdb.Create[[]FoodData](m.DB, models.Table("food_data"), FoodData{
-		Name:          name,
-		Enabled:       enabled,
-		Likes:         likes,
-		LastDateTried: lastDateTried,
-	})
+
+func (m *FoodDataModel) Get(id int) (FoodData, error) {
+	stmt := `SELECT id, name, enabled, likes, last_date_tried FROM foods WHERE id = ?`
+
+	row := m.DB.QueryRow(stmt, id)
+
+	var fd FoodData
+
+	err := row.Scan(&fd.ID, &fd.Name, &fd.Enabled, &fd.Likes, &fd.LastDateTried)
 
 	if err != nil {
-		return nil, err
+		if errors.Is(err, sql.ErrNoRows) {
+			return FoodData{}, ErrNoRecord
+		} else {
+			return FoodData{}, err
+		}
 	}
 
-	food := FirstOrNil(*createdFoods)
-	if food == nil {
-		panic("No food data returned")
-	}
-	return food, nil
+	return fd, nil
 }
 
-func (m *FoodDataModel) Get(id string) (*FoodData, error) {
-	food, err := surrealdb.Select[FoodData](m.DB, id)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return food, nil
-
-}
