@@ -34,15 +34,15 @@ func (m *MealPlannerModel) GetCustomFood(id int) (FoodData, error) {
 
 	row := m.DB.QueryRow(stmt, id)
 
-	var fd FoodData
+	var fd UserCustomFoodData
 
 	err := row.Scan(&fd.ID, &fd.Name, &fd.Enabled, &fd.Likes, &fd.LastDateTried)
 
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
-			return FoodData{}, ErrNoRecord
+			return UserCustomFoodData{}, ErrNoRecord
 		} else {
-			return FoodData{}, err
+			return UserCustomFoodData{}, err
 		}
 	}
 
