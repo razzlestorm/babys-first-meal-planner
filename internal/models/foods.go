@@ -11,10 +11,6 @@ type FoodData struct {
 	Name          string           `json:"name"`
 }
 
-type MealPlannerModel struct {
-	DB *sql.DB
-}
-
 
 func (m *MealPlannerModel) InsertFood(name string) (int, error) {
 	stmt := `INSERT INTO Foods (name) VALUES(?)`
