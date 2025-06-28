@@ -1,4 +1,4 @@
-package models
+ackage models
 
 import (
 	"errors"

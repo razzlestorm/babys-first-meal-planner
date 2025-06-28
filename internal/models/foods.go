@@ -9,19 +9,16 @@ import (
 type FoodData struct {
 	ID            int `json:"id,omitempty"`
 	Name          string           `json:"name"`
-	Enabled       bool             `json:"enabled"`
-	Likes         bool             `json:"likes"`
-	LastDateTried time.Time        `json:"date_tried"`
 }
 
-type FoodDataModel struct {
+type MealPlannerModel struct {
 	DB *sql.DB
 }
 
 
-func (m *FoodDataModel) Insert(name string, enabled, likes bool, lastDateTried time.Time) (int, error) {
-	stmt := `INSERT INTO foods (name, enabled, likes, last_date_tried) VALUES(?, ?, ?, ?)`
-	result, err := m.DB.Exec(stmt, name, enabled, likes, lastDateTried)
+func (m *MealPlannerModel) InsertFood(name string) (int, error) {
+	stmt := `INSERT INTO Foods (name) VALUES(?)`
+	result, err := m.DB.Exec(stmt, name)
 	if err != nil {
 		return 0, err
 	}
@@ -35,8 +32,8 @@ func (m *FoodDataModel) Insert(name string, enabled, likes bool, lastDateTried t
 }
 
 
-func (m *FoodDataModel) Get(id int) (FoodData, error) {
-	stmt := `SELECT id, name, enabled, likes, last_date_tried FROM foods WHERE id = ?`
+func (m *MealPlannerModel) GetFood(id int) (FoodData, error) {
+	stmt := `SELECT id, name FROM foods WHERE id = ?`
 
 	row := m.DB.QueryRow(stmt, id)
 

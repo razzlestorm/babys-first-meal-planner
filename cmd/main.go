@@ -50,9 +50,9 @@ func main() {
 	defer db.Close()
 
 
-	fdm := models.FoodDataModel{DB: db}
+	planner := models.MealPlannerModel{DB: db}
 
-	foodID, err := fdm.Insert("Cheese", true, true, time.Now())
+	foodID, err := planner.InsertFood("Cheese")
 
 	if err != nil {
 		panic(err)
