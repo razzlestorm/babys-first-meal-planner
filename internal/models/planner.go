@@ -1,22 +1,19 @@
 package models
 
 import (
-	"time"
 	"database/sql"
 	"errors"
+	"time"
 )
 
 type MealPlannerModel struct {
 	DB *sql.DB
 }
 
-
-
 type UserData struct {
-	UserID		string
-	Email	        string
+	UserID string
+	Email  string
 }
-
 
 // TODO: Separate this out into its own handler, not MealPlannerModel
 func (m *MealPlannerModel) InsertUser(userId, email string) (string, error) {
@@ -33,7 +30,6 @@ func (m *MealPlannerModel) InsertUser(userId, email string) (string, error) {
 
 	return id, nil
 }
-
 
 func (m *MealPlannerModel) GetUserId(id string) (string, error) {
 	stmt := `SELECT user_id FROM Users WHERE id = ?`
@@ -54,4 +50,3 @@ func (m *MealPlannerModel) GetUserId(id string) (string, error) {
 
 	return ud.UserID, nil
 }
-
