@@ -13,6 +13,14 @@ type UserCustomFoodData struct {
 	Category Category `json:"category"`
 }
 
+func (f UserCustomFoodData) GetName() {
+	return f.Name
+}
+
+func (f UserCustomFoodData) GetCategory() {
+	return f.Category
+}
+
 func (m *MealPlannerModel) InsertCustomFood(userId, name string, category Category) (int, error) {
 	stmt := `INSERT INTO UserCustomFoods (user_id, name, category) VALUES(?, ?, ?)`
 	result, err := m.DB.Exec(stmt, userId, name)

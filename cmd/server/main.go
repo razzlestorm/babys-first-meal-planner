@@ -3,16 +3,23 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"html/template"
 	"log/slog"
 	"os"
 	"time"
 
-	"github.com/joho/godotenv"
+	"github.com/go-playground/form/v4"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/joho/godotenv"
 
 	"github.com/razzlestorm/babys-first-meal-planner/internal/models"
 )
 
+type application struct {
+	logger        *slog.Logger
+	templateCache map[string]*template.Template
+	formDecoder   *form.Decoder
+}
 
 func openDB(user, pass, dbName string) (*sql.DB, error) {
 	db, err := sql.Open("mysql", fmt.Sprintf("%s:%s@/%s?parseTime=true", user, pass, dbName))
@@ -28,7 +35,6 @@ func openDB(user, pass, dbName string) (*sql.DB, error) {
 
 	return db, nil
 }
-
 
 func main() {
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
@@ -49,22 +55,29 @@ func main() {
 
 	defer db.Close()
 
+	/*
+		planner := models.MealPlannerModel{DB: db}
 
-	planner := models.MealPlannerModel{DB: db}
+		foodID, err := planner.InsertFood("Cheese")
 
-	foodID, err := planner.InsertFood("Cheese")
+		if err != nil {
+			panic(err)
+		}
 
-	if err != nil {
-		panic(err)
-	}
+		fmt.Printf("Created food data with an id: %+d\n", foodID)
 
-	fmt.Printf("Created food data with an id: %+d\n", foodID)
+		// Get entry by Record ID
+		selectedFood, err := fdm.Get(foodID)
+		if err != nil {
+			panic(err)
+		}
 
-	// Get entry by Record ID
-	selectedFood, err := fdm.Get(foodID)
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Printf("Selected a food by record id: %+v\n", selectedFood)
+		fmt.Printf("Selected a food by record id: %+v\n", selectedFood)
+	*/
+	// eventually serve our application.routes(), where we will list the various page routes to go to
+	// For now though, we're just going to have it on the main page
+	// create infinte loop
+	// Run manager
+	// As user logs in , populate manager.sessions with userSessions with a timeout
+	// Return to a saved session, or start a new one if there wasn't a previous session
 }
