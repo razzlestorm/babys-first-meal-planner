@@ -7,6 +7,8 @@
 * Create an Orchestration with a controller for instances of the meal planning calendar for each user.
     * Should update cal in real time for changes users make
     * Should be in goroutines that begin and end when user logs in/out
+    * Clients each get a channel that jobs can be submitted to (like creating a randomized calendar)
+    * Orchestrator listens for channels with jobs and then processes them, then returns some result
 * ~~Decide on actual DB and use it.~~
+    * Maybe we also have a DBOrchestrator, which listens on a channel for adding custom foods to a user's CustomFoods table? Can be done later.
     * Create API for db, allow users to add foods (normalize and/or suggest a food if it's already in the db)
-* Create frontend interface that calls various endpoints

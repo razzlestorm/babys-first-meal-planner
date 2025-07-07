@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"log/slog"
+	"new/http"
 	"os"
 	"time"
 
@@ -36,6 +37,10 @@ func openDB(user, pass, dbName string) (*sql.DB, error) {
 	return db, nil
 }
 
+func home() {
+	
+}
+
 func main() {
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 	err := godotenv.Load()
@@ -55,6 +60,8 @@ func main() {
 
 	defer db.Close()
 
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", home)
 	/*
 		planner := models.MealPlannerModel{DB: db}
 

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Home - MealPlanner</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href='/'>Mealplanner</a></h1>
+        </header>
+        <main>
+	    {{if .Calendar}}
+	    <table>
+		<tr>
+		    <!--Range over calendar and then range of meals -->
+		    <th>day</th>
+		    <th>Created</th>
+		    <th>ID</th>
+		</tr>
+	    </table>
+	    {{else}}
+	    <p>There's nothing to see here yet!</p>
+	    {{end}}
+        </main>
+        <footer>Powered by <a href='https://golang.org/'>Go</a></footer>
+    </body>
+</html>

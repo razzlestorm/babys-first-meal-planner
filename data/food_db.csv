@@ -1,376 +1,376 @@
-name,enabled,last_date_tried,likes
-Egg,,,
-Strawberry,,,
-Avocado,,,
-Tomato,,,
-Banana,,,
-Bread,,,
-Apple,,,
-Black Beans,,,
-Orange,,,
-Cheese,,,
-Peanut,,,
-Cabbage,,,
-Mango,,,
-Blueberries,,,
-Sweet Potato,,,
-White Button Mushroom,,,
-Rice,,,
-Kidney Beans,,,
-Asparagus,,,
-Pineapple,,,
-Tortilla,,,
-Radish,,,
-Mandarin,,,
-Steak,,,
-Salmon,,,
-Plantain,,,
-Pumpkin,,,
-Beet,,,
-Corn,,,
-Queso Fresco,,,
-Cherimoya,,,
-Garlic,,,
-Grape,,,
-Chicken,,,
-Cucumber,,,
-Pasta,,,
-Bagel,,,
-Dill,,,
-Lettuce,,,
-Chayote,,,
-Lemon,,,
-Yogurt,,,
-Oats,,,
-Arctic Char,,,
-Paneer,,,
-Tacos,,,
-Kiwi,,,
-Rhubarb,,,
-Lima Bean,,,
-Branzino,,,
-Sage,,,
-Granadilla,,,
-Honeydew Melon,,,
-Raisins,,,
-Spaghetti Squash,,,
-Pancakes,,,
-Papaya,,,
-Ketchup,,,
-Colby Cheese,,,
-Parsley,,,
-Rutabaga,,,
-Octopus,,,
-Guava,,,
-Emmentaler Cheese,,,
-Acai,,,
-Parsnip,,,
-Taro,,,
-Edamame,,,
-Pistachio,,,
-Romaine,,,
-Goat Cheese,,,
-Dates,,,
-Sunflower Seed,,,
-Edam Cheese,,,
-Cloves,,,
-Frencch Toast,,,
-Prickley Pear,,,
-Trout,,,
-Chickpea,,,
-Raspberry,,,
-Chives,,,
-Brie Cheese,,,
-Lentil,,,
-Carrot,,,
-Cotija Cheese,,,
-Bulgur,,,
-Blackberry,,,
-Crab,,,
-Cayenne Pepper,,,
-Pecorino Cheese,,,
-Galangal,,,
-Oroblanco,,,
-Provolone,,,
-Mackerel,,,
-Lotus Root,,,
-Leek,,,
-Challah,,,
-Hare,,,
-Chanterelle Mushroom,,,
-Mint,,,
-Zapote,,,
-Pizza,,,
-Seaweed,,,
-Pulasan,,,
-Tomatillo,,,
-Great Northern Bean,,,
-Labneh,,,
-Asian Pear,,,
-Portobello Mushroom,,,
-Millet,,,
-Cardamom,,,
-Cod,,,
-Waffle,,,
-Collard Greens,,,
-Quail Egg,,,
-Duck,,,
-Allspice,,,
-Delicata Squash,,,
-Tuna,,,
-Turkey,,,
-Turmeric,,,
-Kabocha Squash,,,
-Chia Seeds,,,
-Sardines,,,
-Snow Pea,,,
-Fonio,,,
-Mayonnaise,,,
-Gruyere Cheese,,,
-Freekeh,,,
-Chaomomile,,,
-Gnocchi,,,
-Pinto Bean,,,
-Cacao,,,
-Ghee,,,
-Pork,,,
-Pawpaw,,,
-Kumquat,,,
-Porcini Mushroom,,,
-Cranberry,,,
-Jarlsberg Cheese,,,
-Shrimp,,,
-Chicken Liver,,,
-Zucchini,,,
-Black Elderberry,,,
-Mustard Greens,,,
-Oyster,,,
-Brussels Sprouts,,,
-Feijoa,,,
-Black-eyed Peas,,,
-Cream Cheese,,,
-Cannellini Bean,,,
-King Trumpet Mushroom,,,
-Monterey Jack Cheese,,,
-Oregano,,,
-Pomelo,,,
-Olice Oil,,,
-Goose,,,
-Lime,,,
-Scallops,,,
-Macadamia Nut,,,
-Hemp Seed,,,
-Arctichoke,,,
-Navy Bean,,,
-Cashew,,,
-Nectarine,,,
-Milk,,,
-Mutton,,,
-Kimchi,,,
-Soy Sauce,,,
-Morel Mushrooms,,,
-Butter,,,
-Farro,,,
-Peas,,,
-Adzuki Bean,,,
-Plum,,,
-Quark,,,
-Summer Squash,,,
-Beef Brisket,,,
-Squid,,,
-Bell pepper,,,
-Ground Beef,,,
-Gouda Cheese,,,
-Burrata,,,
-Sunchoke,,,
-Swiss Cheese,,,
-Mascarpone Cheese,,,
-Juneberry,,,
-Duck Egg,,,
-Basil,,,
-Chicken Feet,,,
-Couscous,,,
-Cottage Cheese,,,
-Huckleberry,,,
-Calamansi,,,
-Star Fruit,,,
-Yam,,,
-Bacon,,,
-Grapefruit,,,
-Brazil Nut,,,
-Spelt,,,
-Soursop,,,
-Persimmon,,,
-Blood Sausage,,,
-Cherry,,,
-Einkorn,,,
-Black Garlic,,,
-Buckwheat,,,
-Poppy Seed,,,
-Iceberg Lettuce,,,
-Chestnut,,,
-Havarti Cheese,,,
-Honeydew Melon,,,
-Jicama,,,
-Sesame,,,
-Sugar,,,
-Sour Cream,,,
-Anchovy,,,
-Scallion,,,
-Hot Dog,,,
-Acorn Squash,,,
-Gooseberry,,,
-Currants,,,
-Khorasan Wheat,,,
-Tamales,,,
-Pine Nut,,,
-Ramps,,,
-Spinach,,,
-Pecans,,,
-Venison,,,
-Chocolate,,,
-Cornmeal,,,
-Nopales,,,
-Matzah,,,
-Wood Ear Mushroom,,,
-Pumpkin Seed,,,
-Juice,,,
-Maitake,,,
-Cantaloupe,,,
-Coconut,,,
-Feta Cheese,,,
-Eggplant,,,
-Camembert Cheese,,,
-Quince,,,
-Cheddar Cheese,,,
-Noodles,,,
-Watermelon,,,
-Miso,,,
-Straw Mushroom,,,
-Celeriac,,,
-Ostrich,,,
-Cauliflower,,,
-Chili Pepper,,,
-Broth,,,
-Chipotle Pepper,,,
-Pear,,,
-Ham,,,
-Wheat,,,
-Barley,,,
-Mustard Seed,,,
-Crawfish,,,
-Cheerios,,,
-Mussels,,,
-Tofu,,,
-Onion,,,
-Sole,,,
-Sichuan Peppercorn,,,
-Cumin,,,
-Snap Peas,,,
-String Cheese,,,
-Okra,,,
-Cranberry Bean,,,
-Walnut,,,
-Potato,,,
-Durian,,,
-Paprika,,,
-Fennel,,,
-Bamboo,,,
-Kale,,,
-Bok Choy,,,
-Cinnamon,,,
-Apricot,,,
-Yardlong Bean,,,
-Butternut Squash,,,
-Clementine,,,
-Catfish,,,
-Hibiscus,,,
-Tilapia,,,
-Truffle,,,
-Thyme,,,
-Parmesan,,,
-Mung Bean,,,
-Sorghum,,,
-Sapodilla,,,
-Lamb,,,
-Yuzu,,,
-Dragon Fruit,,,
-Asiago Cheese,,,
-Fig,,,
-Manchego Cheese,,,
-Turnip,,,
-Coconut Milk,,,
-Celery,,,
-Lobster,,,
-Amaranth Seed,,,
-Enoki Mushroom,,,
-Fava Bean,,,
-Horseradish,,,
-Ricotta Cheese,,,
-Vanilla,,,
-Mozzarella Cheese,,,
-La Tur Cheese,,,
-Lychee,,,
-Squash Blossoms,,,
-Quinoa,,,
-Rosemary,,,
-Herring,,,
-Black Pepper,,,
-Crackers,,,
-Clams,,,
-Shiitake Mushrooms,,,
-Quesillo,,,
-Olives,,,
-Nutrional Yeast,,,
-Prune,,,
-Romanesco,,,
-Purple Potatoes,,,
-Flounder,,,
-Rambutan,,,
-Peach,,,
-Bitter Melon,,,
-Jackfruit,,,
-Beech Mushroom,,,
-Tamarind,,,
-Pomegranate,,,
-Pollock,,,
-Beef Liver,,,
-Rye,,,
-Brocolli,,,
-Mustard,,,
-Hazelnut,,,
-Nutmeg,,,
-Jalapeno Pepper,,,
-Vinegar,,,
-Almond,,,
-Ribs,,,
-Ice Cream,,,
-Longan,,,
-Flaxseed,,,
-Tempeh,,,
-Buttermilk,,,
-Kefir,,,
-Halibut,,,
-Lemongrass,,,
-Oyster Mushroom,,,
-Haddock,,,
-Ginger,,,
-Loquat,,,
-Manoomin,,,
-Cilantro,,,
-Bone Marrow,,,
-Napa Cabbage,,,
-Blue Cheese,,,
-Goldenberry,,,
-Bison,,,
-Sausage,,,
-Green Beans,,,
-Rabbit,,,
-Grasshoppers,,,
-Passion Fruit,,,
-Cassava,,,
-Sauerkraut,,,
-Teff,,,
-Maple Syrup,,,
-Plaice,,,
-Kohlrabi,,,
+name,category
+Egg,protein
+Strawberry,fruit
+Avocado,fruit
+Tomato,vegetable
+Banana,fruit
+Bread,grain
+Apple,fruit
+Black Beans,protein
+Orange,fruit
+Cheese,dairy
+Peanut,protein
+Cabbage,vegetable
+Mango,fruit
+Blueberries,fruit
+Sweet Potato,vegetable
+White Button Mushroom,vegetable
+Rice,grain
+Kidney Beans,protein
+Asparagus,vegetable
+Pineapple,fruit
+Tortilla,grain
+Radish,vegetable
+Mandarin,fruit
+Steak,protein
+Salmon,protein
+Plantain,fruit
+Pumpkin,vegetable
+Beet,vegetable
+Corn,grain
+Queso Fresco,dairy
+Cherimoya,fruit
+Garlic,vegetable
+Grape,fruit
+Chicken,protein
+Cucumber,vegetable
+Pasta,grain
+Bagel,grain
+Dill,vegetable
+Lettuce,vegetable
+Chayote,vegetable
+Lemon,fruit
+Yogurt,dairy
+Oats,grain
+Arctic Char,vegetable
+Paneer,dairy
+Tacos,grain
+Kiwi,fruit
+Rhubarb,vegetable
+Lima Bean,protein
+Branzino,protein
+Sage,vegetable
+Granadilla,fruit
+Honeydew Melon,fruit
+Raisins,fruit
+Spaghetti Squash,vegetable
+Pancakes,grain
+Papaya,fruit
+Ketchup,vegetable
+Colby Cheese,dairy
+Parsley,vegetable
+Rutabaga,vegetable
+Octopus,protein
+Guava,fruit
+Emmentaler Cheese,dairy
+Acai,fruit
+Parsnip,vegetable
+Taro,vegetable
+Edamame,protein
+Pistachio,protein
+Romaine,vegetable
+Goat Cheese,dairy
+Dates,fruit
+Sunflower Seed,protein
+Edam Cheese,dairy
+Cloves,vegetable
+French Toast,grain
+Prickley Pear,fruit
+Trout,protein
+Chickpea,protein
+Raspberry,fruit
+Chives,vegetable
+Brie Cheese,dairy
+Lentil,protein
+Carrot,vegetable
+Cotija Cheese,dairy
+Bulgur,grain
+Blackberry,fruit
+Crab,protein
+Cayenne Pepper,vegetable
+Pecorino Cheese,dairy
+Galangal,vegetable
+Oroblanco,fruit
+Provolone,dairy
+Mackerel,protein
+Lotus Root,vegetable
+Leek,vegetable
+Challah,grain
+Hare,protein
+Chanterelle Mushroom,vegetable
+Mint,vegetable
+Zapote,fruit
+Pizza,protein
+Seaweed,vegetable
+Pulasan,fruit
+Tomatillo,vegetable
+Great Northern Bean,protein
+Labneh,dairy
+Asian Pear,fruit
+Portobello Mushroom,vegetable
+Millet,grain
+Cardamom,vegetable
+Cod,protein
+Waffle,grain
+Collard Greens,vegetable
+Quail Egg,protein
+Duck,protein
+Allspice,vegetable
+Delicata Squash,vegetable
+Tuna,protein
+Turkey,protein
+Turmeric,vegetable
+Kabocha Squash,vegetable
+Chia Seeds,protein
+Sardines,protein
+Snow Pea,vegetable
+Fonio,grain
+Mayonnaise,protein
+Gruyere Cheese,dairy
+Freekeh,grain
+Chaomomile,vegetable
+Gnocchi,protein
+Pinto Bean,protein
+Cacao,vegetable
+Ghee,dairy
+Pork,protein
+Pawpaw,fruit
+Kumquat,fruit
+Porcini Mushroom,vegetable
+Cranberry,fruit
+Jarlsberg Cheese,dairy
+Shrimp,protein
+Chicken Liver,protein
+Zucchini,vegetable
+Black Elderberry,fruit
+Mustard Greens,vegetable
+Oyster,protein
+Brussels Sprouts,vegetable
+Feijoa,fruit
+Black-eyed Peas,grain
+Cream Cheese,dairy
+Cannellini Bean,protein
+King Trumpet Mushroom,vegetable
+Monterey Jack Cheese,dairy
+Oregano,vegetable
+Pomelo,fruit
+Olive Oil,vegetable
+Goose,protein
+Lime,fruit
+Scallops,protein
+Macadamia Nut,protein
+Hemp Seed,protein
+Arctichoke,vegetable
+Navy Bean,protein
+Cashew,protein
+Nectarine,fruit
+Milk,dairy
+Mutton,protein
+Kimchi,vegetable
+Soy Sauce,protein
+Morel Mushrooms,vegetable
+Butter,dairy
+Farro,grain
+Peas,vegetable
+Adzuki Bean,protein
+Plum,fruit
+Quark,dairy
+Summer Squash,vegetable
+Beef Brisket,protein
+Squid,protein
+Bell pepper,vegetable
+Ground Beef,protein
+Gouda Cheese,dairy
+Burrata,dairy
+Sunchoke,vegetable
+Swiss Cheese,dairy
+Mascarpone Cheese,dairy
+Juneberry,fruit
+Duck Egg,protein
+Basil,vegetable
+Chicken Feet,protein
+Couscous,grain
+Cottage Cheese,dairy
+Huckleberry,fruit
+Calamansi,fruit
+Star Fruit,fruit
+Yam,vegetable
+Bacon,protein
+Grapefruit,fruit
+Brazil Nut,protein
+Spelt,grain
+Soursop,fruit
+Persimmon,fruit
+Blood Sausage,protein
+Cherry,fruit
+Einkorn,grain
+Black Garlic,vegetable
+Buckwheat,grain
+Poppy Seed,protein
+Iceberg Lettuce,vegetable
+Chestnut,protein
+Havarti Cheese,dairy
+Honeydew Melon,fruit
+Jicama,vegetable
+Sesame,protein
+Sugar,vegetable
+Sour Cream,dairy
+Anchovy,protein
+Scallion,vegetable
+Hot Dog,protein
+Acorn Squash,grain
+Gooseberry,protein
+Currants,fruit
+Khorasan Wheat,grain
+Tamales,vegetable
+Pine Nut,protein
+Ramps,vegetable
+Spinach,vegetable
+Pecans,protein
+Venison,protein
+Chocolate,vegetable
+Cornmeal,grain
+Nopales,vegetable
+Matzah,grain
+Wood Ear Mushroom,vegetable
+Pumpkin Seed,protein
+Juice,fruit
+Maitake,protein
+Cantaloupe,fruit
+Coconut,protein
+Feta Cheese,dairy
+Eggplant,protein
+Camembert Cheese,dairy
+Quince,dairy
+Cheddar Cheese,dairy
+Noodles,grain
+Watermelon,fruit
+Miso,vegetable
+Straw Mushroom,vegetable
+Celeriac,vegetable
+Ostrich,protein
+Cauliflower,vegetable
+Chili Pepper,vegetable
+Broth,protein
+Chipotle Pepper,vegetable
+Pear,fruit
+Ham,protein
+Wheat,grain
+Barley,grain
+Mustard Seed,protein
+Crawfish,protein
+Cheerios,grain
+Mussels,protein
+Tofu,protein
+Onion,vegetable
+Sole,protein
+Sichuan Peppercorn,grain
+Cumin,vegetable
+Snap Peas,vegetable
+String Cheese,dairy
+Okra,vegetable
+Cranberry Bean,protein
+Walnut,protein
+Potato,vegetable
+Durian,fruit
+Paprika,vegetable
+Fennel,vegetable
+Bamboo,vegetable
+Kale,vegetable
+Bok Choy,vegetable
+Cinnamon,vegetable
+Apricot,fruit
+Yardlong Bean,protein
+Butternut Squash,protein
+Clementine,fruit
+Catfish,protein
+Hibiscus,vegetable
+Tilapia,protein
+Truffle,protein
+Thyme,vegetable
+Parmesan,dairy
+Mung Bean,protein
+Sorghum,grain
+Sapodilla,fruit
+Lamb,protein
+Yuzu,fruit
+Dragon Fruit,fruit
+Asiago Cheese,dairy
+Fig,fruit
+Manchego Cheese,dairy
+Turnip,vegetable
+Coconut Milk,dairy
+Celery,vegetable
+Lobster,protein
+Amaranth Seed,protein
+Enoki Mushroom,vegetable
+Fava Bean,protein
+Horseradish,vegetable
+Ricotta Cheese,dairy
+Vanilla,vegetable
+Mozzarella Cheese,dairy
+La Tur Cheese,dairy
+Lychee,fruit
+Squash Blossoms,vegetable
+Quinoa,grain
+Rosemary,vegetable
+Herring,protein
+Black Pepper,vegetable
+Crackers,grain
+Clams,protein
+Shiitake Mushrooms,vegetable
+Quesillo,dairy
+Olives,fruit
+Nutrional Yeast,protein
+Prune,fruit
+Romanesco,vegetable
+Purple Potatoes,vegetable
+Flounder,protein
+Rambutan,fruit
+Peach,fruit
+Bitter Melon,fruit
+Jackfruit,fruit
+Beech Mushroom,vegetable
+Tamarind,fruit
+Pomegranate,fruit
+Pollock,protein
+Beef Liver,protein
+Rye,grain
+Brocolli,vegetable
+Mustard,vegetable
+Hazelnut,protein
+Nutmeg,protein
+Jalapeno Pepper,vegetable
+Vinegar,vegetable
+Almond,protein
+Ribs,protein
+Ice Cream,dairy
+Longan,fruit
+Flaxseed,protein
+Tempeh,protein
+Buttermilk,dairy
+Kefir,dairy
+Halibut,protein
+Lemongrass,fruit
+Oyster Mushroom,vegetable
+Haddock,protein
+Ginger,vegetable
+Loquat,fruit
+Manoomin,grain
+Cilantro,vegetable
+Bone Marrow,protein
+Napa Cabbage,vegetable
+Blue Cheese,dairy
+Goldenberry,fruit
+Bison,protein
+Sausage,protein
+Green Beans,protein
+Rabbit,protein
+Grasshoppers,protein
+Passion Fruit,fruit
+Cassava,vegetable
+Sauerkraut,protein
+Teff,grain
+Maple Syrup,vegetable
+Plaice,protein
+Kohlrabi,vegetable
