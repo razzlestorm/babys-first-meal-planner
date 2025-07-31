@@ -1,5 +1,5 @@
-package users
-
+package manager
+/*
 import (
 	"context"
 	"fmt"
@@ -28,3 +28,4 @@ func (m *userManager) Logout(session userSession) {
 	delete(m.sessions, session)
 	close(session.jobChan)
 }
+*/

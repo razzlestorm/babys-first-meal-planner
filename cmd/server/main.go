@@ -5,21 +5,21 @@ import (
 	"fmt"
 	"html/template"
 	"log/slog"
-	"new/http"
+	"net/http"
 	"os"
-	"time"
 
-	"github.com/go-playground/form/v4"
+	_ "github.com/go-playground/form/v4"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 
-	"github.com/razzlestorm/babys-first-meal-planner/internal/models"
+	_ "github.com/razzlestorm/babys-first-meal-planner/internal/models"
+	"github.com/razzlestorm/babys-first-meal-planner/cmd/calendar"
 )
 
 type application struct {
 	logger        *slog.Logger
 	templateCache map[string]*template.Template
-	formDecoder   *form.Decoder
+	calendarConfig	*calendar.CalendarConfig
 }
 
 func openDB(user, pass, dbName string) (*sql.DB, error) {
@@ -37,9 +37,7 @@ func openDB(user, pass, dbName string) (*sql.DB, error) {
 	return db, nil
 }
 
-func home() {
-	
-}
+
 
 func main() {
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
@@ -51,6 +49,8 @@ func main() {
 	user := os.Getenv("DB_USER")
 	pass := os.Getenv("DB_PASS")
 	dbName := os.Getenv("DB_NAME")
+	port := os.Getenv("PORT")
+
 
 	db, err := openDB(user, pass, dbName)
 	if err != nil {
@@ -60,14 +60,23 @@ func main() {
 
 	defer db.Close()
 
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", home)
+	templateCache, err := newTemplateCache()
+	if err != nil {
+		logger.Error(err.Error())
+		os.Exit(1)
+	}
+
+	calendarConfig, err := calendar.NewCalendarConfig(30, 3, 3)
+	if err != nil {
+		logger.Error(err.Error())
+		os.Exit(1)
+	}
 	/*
 		planner := models.MealPlannerModel{DB: db}
 
 		foodID, err := planner.InsertFood("Cheese")
 
-		if err != nil {
+		if err != nil { 
 			panic(err)
 		}
 
@@ -87,4 +96,14 @@ func main() {
 	// Run manager
 	// As user logs in , populate manager.sessions with userSessions with a timeout
 	// Return to a saved session, or start a new one if there wasn't a previous session
+	app := &application{
+		logger:        logger,
+		templateCache: templateCache,
+		calendarConfig: calendarConfig, 
+	}
+	
+	logger.Info("Starting server", "port", port)
+	err = http.ListenAndServe(port, app.routes())
+	logger.Error(err.Error())
+	os.Exit(1)
 }

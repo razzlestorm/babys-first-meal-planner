@@ -3,7 +3,6 @@ package models
 import (
 	"database/sql"
 	"errors"
-	"time"
 )
 
 type MealPlannerModel struct {
@@ -16,7 +15,8 @@ type UserData struct {
 }
 
 // TODO: Separate this out into its own handler, not MealPlannerModel
-func (m *MealPlannerModel) InsertUser(userId, email string) (string, error) {
+// TODO: Also update the id to be uuids
+func (m *MealPlannerModel) InsertUser(userId, email string) (int64, error) {
 	stmt := `INSERT INTO Users (userId, email) VALUES(?, ?)`
 	result, err := m.DB.Exec(stmt, userId, email)
 	if err != nil {
@@ -36,17 +36,17 @@ func (m *MealPlannerModel) GetUserId(id string) (string, error) {
 
 	row := m.DB.QueryRow(stmt, id)
 
-	var ud UserData
+	var userID string
 
-	err := row.Scan(&ud.UserID, &ud.Email)
+	err := row.Scan(&userID)
 
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
-			return nil, ErrNoRecord
+			return "", ErrNoRecord
 		} else {
-			return nil, err
+			return "", err
 		}
 	}
 
-	return ud.UserID, nil
+	return userID, nil
 }

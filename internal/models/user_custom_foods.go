@@ -3,7 +3,6 @@ package models
 import (
 	"database/sql"
 	"errors"
-	"time"
 )
 
 type UserCustomFoodData struct {
@@ -13,11 +12,11 @@ type UserCustomFoodData struct {
 	Category Category `json:"category"`
 }
 
-func (f UserCustomFoodData) GetName() {
+func (f UserCustomFoodData) GetName() string {
 	return f.Name
 }
 
-func (f UserCustomFoodData) GetCategory() {
+func (f UserCustomFoodData) GetCategory() Category {
 	return f.Category
 }
 
@@ -36,7 +35,7 @@ func (m *MealPlannerModel) InsertCustomFood(userId, name string, category Catego
 	return int(id), nil
 }
 
-func (m *MealPlannerModel) GetCustomFood(id int) (FoodData, error) {
+func (m *MealPlannerModel) GetCustomFood(id int) (UserCustomFoodData, error) {
 	stmt := `SELECT id, name, category FROM UserCustomFoods WHERE user_id = ?`
 
 	row := m.DB.QueryRow(stmt, id)

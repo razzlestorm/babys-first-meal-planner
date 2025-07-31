@@ -3,7 +3,6 @@ package models
 import (
 	"database/sql"
 	"errors"
-	"time"
 )
 
 type Category int
@@ -22,11 +21,11 @@ type FoodData struct {
 	Category Category `json:"category"`
 }
 
-func (f FoodData) GetName() {
+func (f FoodData) GetName() string {
 	return f.Name
 }
 
-func (f FoodData) GetCategory() {
+func (f FoodData) GetCategory() Category {
 	return f.Category
 }
 

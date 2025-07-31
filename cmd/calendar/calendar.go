@@ -1,16 +1,19 @@
 package calendar
 
 import (
-	"math/rand"
-
+	_ "math/rand"
+	"fmt"
 	"github.com/razzlestorm/babys-first-meal-planner/internal/models"
 )
 
 // create an interface for FoodData and UserCustomFoodData
 type Food interface {
 	GetName() string
-	GetCategory() Category
+	GetCategory() models.Category
 }
+
+// Figure out what this wants to look like later
+type Job struct{}
 
 type CalendarConfig struct {
 	jobChan      chan Job
@@ -19,6 +22,25 @@ type CalendarConfig struct {
 	foodsPerMeal int
 	foods        []Food
 }
+
+
+func NewCalendarConfig(days int, mpd int, fpm int) (*CalendarConfig, error) {
+
+	if days <= 0 || mpd <= 0 || fpm <= 0 {
+		return nil, fmt.Errorf("all arguments must be greater than 0: got days=%d, mealsPerDay=%d, foodsPerMeal=%d", days, mpd, fpm)
+	}
+
+	c := CalendarConfig{
+		jobChan: make(chan Job),
+		days: days,
+		mealsPerDay: mpd,
+		foodsPerMeal: fpm,
+		// Figure out how/when we want to add foods, maybe in another function
+		foods: []Food{},
+	}
+	return &c, nil
+}
+
 
 type Calendar struct {
 	mapping map[int]map[int]string
@@ -37,6 +59,9 @@ func (c *Calendar) randomize(buffer int, config CalendarConfig) {
 	   1[1] = carrots, steak, grapes
 	   1[2] = lemon, salmon, lettuce
 
+	for day := range c.days {
+		
+	}
 	*/
 
 }
