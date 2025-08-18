@@ -12,14 +12,14 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 
-	_ "github.com/razzlestorm/babys-first-meal-planner/internal/models"
 	"github.com/razzlestorm/babys-first-meal-planner/cmd/calendar"
+	_ "github.com/razzlestorm/babys-first-meal-planner/internal/models"
 )
 
 type application struct {
-	logger        *slog.Logger
-	templateCache map[string]*template.Template
-	calendarConfig	*calendar.CalendarConfig
+	logger         *slog.Logger
+	templateCache  map[string]*template.Template
+	calendarConfig *calendar.CalendarConfig
 }
 
 func openDB(user, pass, dbName string) (*sql.DB, error) {
@@ -37,8 +37,6 @@ func openDB(user, pass, dbName string) (*sql.DB, error) {
 	return db, nil
 }
 
-
-
 func main() {
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 	err := godotenv.Load()
@@ -50,7 +48,6 @@ func main() {
 	pass := os.Getenv("DB_PASS")
 	dbName := os.Getenv("DB_NAME")
 	port := os.Getenv("PORT")
-
 
 	db, err := openDB(user, pass, dbName)
 	if err != nil {
@@ -76,7 +73,7 @@ func main() {
 
 		foodID, err := planner.InsertFood("Cheese")
 
-		if err != nil { 
+		if err != nil {
 			panic(err)
 		}
 
@@ -96,12 +93,13 @@ func main() {
 	// Run manager
 	// As user logs in , populate manager.sessions with userSessions with a timeout
 	// Return to a saved session, or start a new one if there wasn't a previous session
+	// Load in the calendar config and the latest calendar that they were working on (or new)
 	app := &application{
-		logger:        logger,
-		templateCache: templateCache,
-		calendarConfig: calendarConfig, 
+		logger:         logger,
+		templateCache:  templateCache,
+		calendarConfig: calendarConfig,
 	}
-	
+
 	logger.Info("Starting server", "port", port)
 	err = http.ListenAndServe(port, app.routes())
 	logger.Error(err.Error())

@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -6,12 +5,12 @@ import (
 	_ "errors"
 	"fmt"
 	"net/http"
-	"time"
 
 	_ "github.com/go-playground/form/v4"
+	"github.com/razzlestorm/babys-first-meal-planner/cmd/calendar"
 )
 
-func (app *application) render(w http.ResponseWriter, r *http.Request, status int, page string, data templateData) {
+func (app *application) render(w http.ResponseWriter, r *http.Request, status int, page string, config *calendar.CalendarConfig, days int) {
 	ts, ok := app.templateCache[page]
 	if !ok {
 		err := fmt.Errorf("the template %s does not exist", page)
@@ -20,7 +19,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, status in
 	}
 
 	buf := new(bytes.Buffer)
-	err := ts.ExecuteTemplate(buf, "base", data)
+	err := ts.ExecuteTemplate(buf, "base", config)
 	if err != nil {
 		app.serverError(w, r, err)
 		return
@@ -43,10 +42,4 @@ func (app *application) serverError(w http.ResponseWriter, r *http.Request, err 
 
 func (app *application) clientError(w http.ResponseWriter, status int) {
 	http.Error(w, http.StatusText(status), status)
-}
-
-func (app *application) newTemplateData() templateData {
-	return templateData{
-		CurrentYear: time.Now().Year(),
-	}
 }

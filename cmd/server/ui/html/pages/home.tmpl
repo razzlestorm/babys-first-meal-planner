@@ -9,15 +9,19 @@
         <header>
             <h1><a href='/'>Mealplanner</a></h1>
         </header>
+	<p>WE ARE HOME</p>
         <main>
-	    {{if .Calendar}}
+	    {{if .Days}}
+	    <p>This is hitting</p>
 	    <table>
+		{{range makeRange .Days}}
 		<tr>
 		    <!--Range over calendar and then range of meals -->
-		    <th>day</th>
+		    <td>day {{ . }} </td>
 		    <th>Created</th>
 		    <th>ID</th>
 		</tr>
+		{{end}}
 	    </table>
 	    {{else}}
 	    <p>There's nothing to see here yet!</p>

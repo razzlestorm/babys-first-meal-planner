@@ -6,14 +6,20 @@ import (
 	"time"
 )
 
-
 type templateData struct {
 	CurrentYear int
 }
 
-
 func humanDate(t time.Time) string {
 	return t.Format("02 Jan 2006 at 15:04")
+}
+
+func makeRange(n int) []int {
+	r := make([]int, n)
+	for i := 0; i < n; i++ {
+		r[i] = i
+	}
+	return r
 }
 
 // Initialize a template.FuncMap object and store it in a global variable. This is
@@ -21,6 +27,7 @@ func humanDate(t time.Time) string {
 // custom template functions and the functions themselves.
 var functions = template.FuncMap{
 	"humanDate": humanDate,
+	"makeRange": makeRange,
 }
 
 func newTemplateCache() (map[string]*template.Template, error) {

@@ -14,8 +14,11 @@
         <header>
             <h1><a href='/'>MealPlanner</a></h1>
         </header>
+        <main>
+            {{template "main" .}}
+        </main>
 	{{template "nav" .}}
-        <footer>Powered by <a href='https://golang.org/'>Go</a> in {{.CurrentYear}}</footer>
+        <footer>Powered by <a href='https://golang.org/'>Go</a></footer>
     </body>
 </html>
 {{end}}

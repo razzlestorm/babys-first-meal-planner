@@ -2,12 +2,12 @@ package main
 
 import (
 	"net/http"
-
 )
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
 
-	data := app.newTemplateData()
+	config := app.calendarConfig
+	days := config.Days
 
-	app.render(w, r, http.StatusOK, "home.tmpl", data)
+	app.render(w, r, http.StatusOK, "home.tmpl", config, days)
 }
