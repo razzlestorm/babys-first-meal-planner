@@ -7,10 +7,9 @@ import (
 	"net/http"
 
 	_ "github.com/go-playground/form/v4"
-	"github.com/razzlestorm/babys-first-meal-planner/cmd/calendar"
 )
 
-func (app *application) render(w http.ResponseWriter, r *http.Request, status int, page string, config *calendar.CalendarConfig, days int) {
+func (app *application) render(w http.ResponseWriter, r *http.Request, status int, page string, data templateData) {
 	ts, ok := app.templateCache[page]
 	if !ok {
 		err := fmt.Errorf("the template %s does not exist", page)
@@ -19,7 +18,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, status in
 	}
 
 	buf := new(bytes.Buffer)
-	err := ts.ExecuteTemplate(buf, "base", config)
+	err := ts.ExecuteTemplate(buf, "base", data)
 	if err != nil {
 		app.serverError(w, r, err)
 		return

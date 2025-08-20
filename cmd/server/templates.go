@@ -4,17 +4,21 @@ import (
 	"html/template"
 	"path/filepath"
 	"time"
+
+	"github.com/razzlestorm/babys-first-meal-planner/cmd/calendar"
+	"github.com/razzlestorm/babys-first-meal-planner/internal/models"
 )
 
 type templateData struct {
-	CurrentYear int
+	Foods  []models.FoodData
+	Config *calendar.CalendarConfig
 }
 
 func humanDate(t time.Time) string {
 	return t.Format("02 Jan 2006 at 15:04")
 }
 
-func makeRange(n int) []int {
+func makeRangeInt(n int) []int {
 	r := make([]int, n)
 	for i := 0; i < n; i++ {
 		r[i] = i
@@ -26,8 +30,8 @@ func makeRange(n int) []int {
 // essentially a string-keyed map which acts as a lookup between the names of our
 // custom template functions and the functions themselves.
 var functions = template.FuncMap{
-	"humanDate": humanDate,
-	"makeRange": makeRange,
+	"humanDate":    humanDate,
+	"makeRangeInt": makeRangeInt,
 }
 
 func newTemplateCache() (map[string]*template.Template, error) {

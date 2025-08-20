@@ -1,4 +1,6 @@
-{{define "title"}}Home{{end}}
+{{define "title"}}
+FOODS ALL THE FOODS
+{{end}}
 {{define "main"}}
 <html lang='en'>
     <head>
@@ -9,17 +11,15 @@
         <header>
             <h1><a href='/'>Mealplanner</a></h1>
         </header>
-	<p>WE ARE HOME</p>
+	<p>WE ARE FOODS</p>
         <main>
-	    {{if .Config.Days}}
+	    {{if .Foods}}
 	    <p>This is hitting</p>
 	    <table>
-		{{range makeRangeInt .Config.Days}}
+		{{range .Foods}}
 		<tr>
 		    <!--Range over calendar and then range of meals -->
-		    <td>day {{ . }} </td>
-		    <th>Created</th>
-		    <th>ID</th>
+		    <td> {{ . }} </td>
 		</tr>
 		{{end}}
 	    </table>

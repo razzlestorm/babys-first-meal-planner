@@ -11,4 +11,5 @@
     * Orchestrator listens for channels with jobs and then processes them, then returns some result
 * ~~Decide on actual DB and use it.~~
     * Maybe we also have a DBOrchestrator, which listens on a channel for adding custom foods to a user's CustomFoods table? Can be done later.
-    * Create API for db, allow users to add foods (normalize and/or suggest a food if it's already in the db)
+    * ~~Create API for db~~, allow users to add foods (normalize and/or suggest a food if it's already in the db)
+    * translate category numbers of foods to strings in template side

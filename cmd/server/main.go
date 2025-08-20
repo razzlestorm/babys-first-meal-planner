@@ -13,13 +13,14 @@ import (
 	"github.com/joho/godotenv"
 
 	"github.com/razzlestorm/babys-first-meal-planner/cmd/calendar"
-	_ "github.com/razzlestorm/babys-first-meal-planner/internal/models"
+	"github.com/razzlestorm/babys-first-meal-planner/internal/models"
 )
 
 type application struct {
 	logger         *slog.Logger
 	templateCache  map[string]*template.Template
 	calendarConfig *calendar.CalendarConfig
+	planner        *models.MealPlannerModel
 }
 
 func openDB(user, pass, dbName string) (*sql.DB, error) {
@@ -63,30 +64,13 @@ func main() {
 		os.Exit(1)
 	}
 
+	// Check for user being logged in here and use their calendar
 	calendarConfig, err := calendar.NewCalendarConfig(30, 3, 3)
 	if err != nil {
 		logger.Error(err.Error())
 		os.Exit(1)
 	}
-	/*
-		planner := models.MealPlannerModel{DB: db}
 
-		foodID, err := planner.InsertFood("Cheese")
-
-		if err != nil {
-			panic(err)
-		}
-
-		fmt.Printf("Created food data with an id: %+d\n", foodID)
-
-		// Get entry by Record ID
-		selectedFood, err := fdm.Get(foodID)
-		if err != nil {
-			panic(err)
-		}
-
-		fmt.Printf("Selected a food by record id: %+v\n", selectedFood)
-	*/
 	// eventually serve our application.routes(), where we will list the various page routes to go to
 	// For now though, we're just going to have it on the main page
 	// create infinte loop
@@ -98,6 +82,7 @@ func main() {
 		logger:         logger,
 		templateCache:  templateCache,
 		calendarConfig: calendarConfig,
+		planner:        &models.MealPlannerModel{DB: db},
 	}
 
 	logger.Info("Starting server", "port", port)

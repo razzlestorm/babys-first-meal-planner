@@ -3,6 +3,7 @@ package models
 import (
 	"database/sql"
 	"errors"
+	"fmt"
 )
 
 type Category int
@@ -59,6 +60,50 @@ func (m *MealPlannerModel) GetFood(id int) (FoodData, error) {
 		} else {
 			return FoodData{}, err
 		}
+	}
+
+	return fd, nil
+}
+
+func (m *MealPlannerModel) GetAllFoods() ([]FoodData, error) {
+	stmt := `SELECT id, name, category FROM foods`
+
+	rows, err := m.DB.Query(stmt)
+
+	defer rows.Close()
+
+	var fd []FoodData
+
+	for rows.Next() {
+
+		var f FoodData
+
+		var category string
+		if err = rows.Scan(&f.ID, &f.Name, &category); err != nil {
+			return nil, err
+		}
+
+		// categories are stored as strings in DB
+		switch category {
+		case "fruit":
+			f.Category = Fruit
+		case "vegetable":
+			f.Category = Vegetable
+		case "grain":
+			f.Category = Grain
+		case "protein":
+			f.Category = Protein
+		case "dairy":
+			f.Category = Dairy
+		default:
+			return nil, fmt.Errorf("unknown category: %s", category)
+		}
+
+		fd = append(fd, f)
+	}
+
+	if err = rows.Err(); err != nil {
+		return nil, err
 	}
 
 	return fd, nil
